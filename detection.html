@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Assignment 3: Browser Detection</h1>
+      <p>
+        You are viewing this page with
+        <span id="browserName">undefined</span>.
+      </p>
+      <hr />
+      <h2>Browser Downloads</h2>
+      <ul>
+        <li>
+          <a href="https://www.apple.com/safari/"
+            >Safari</a
+          >
+          <p>
+            Microsoft Internet Explorer version
+            7.1
+          </p>
+        </li>
+        <li>
+          <a
+            href="https://www.mozilla.org/en-US/firefox/new/"
+            >Firefox</a
+          >
+          <p>Mozilla Firefox version 72.0.2</p>
+        </li>
+        <li>
+          <a href="https://www.google.com/chrome/"
+            >Chrome</a
+          >
+          <p>Google Chrome version 80</p>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      window.addEventListener("load", function() {
+        // CHROME
+        if (
+          navigator.userAgent.indexOf("Chrome") !=
+          -1
+        ) {
+          /* console.log("Google Chrome"); */
+          document.body.style.backgroundColor =
+            "green";
+          document.getElementById(
+            "container"
+          ).style.color = "red";
+          document.getElementById(
+            "browserName"
+          ).innerHTML = "Chrome";
+        }
+        // FIREFOX
+        else if (
+          navigator.userAgent.indexOf(
+            "Firefox"
+          ) != -1
+        ) {
+          /* console.log("Mozilla Firefox"); */
+          document.body.style.backgroundColor =
+            "yellow";
+          document.getElementById(
+            "container"
+          ).style.color = "black";
+          document.getElementById(
+            "browserName"
+          ).innerHTML = "Firefox";
+        }
+        // SAFARI
+        else if (
+          navigator.userAgent.indexOf("Safari") !=
+          -1
+        ) {
+          /* console.log("Safari"); */
+          document.body.style.backgroundColor =
+            "grey";
+          document.getElementById(
+            "container"
+          ).style.color = "blue";
+          document.getElementById(
+            "browserName"
+          ).innerHTML = "Safari";
+        }
+      });
+    </script>
+  </body>
+</html>
